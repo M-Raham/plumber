@@ -82,7 +82,7 @@ export default function Home() {
     {
       name: "Sarah Johnson",
       role: "Homeowner",
-      content: "AquaFlow Plumbing saved the day! Their emergency service was fast, professional, and affordable. Highly recommend!",
+      content: "Plumbing saved the day! Their emergency service was fast, professional, and affordable. Highly recommend!",
       rating: 5
     },
     {
@@ -94,7 +94,7 @@ export default function Home() {
     {
       name: "Emily Rodriguez",
       role: "Property Manager",
-      content: "Reliable, professional, and always on time. AquaFlow is our go-to plumbing service for all our properties.",
+      content: "Reliable, professional, and always on time. Plumbing is our go-to plumbing service for all our properties.",
       rating: 5
     }
   ];
@@ -107,7 +107,7 @@ export default function Home() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-2">
               <Droplets className="w-8 h-8 text-blue-600" />
-              <span className="text-xl font-bold text-slate-900">AquaFlow Plumbing</span>
+              <span className="text-xl font-bold text-slate-900">Plumbing</span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#services" className="text-slate-700 hover:text-blue-600 transition-colors">Services</a>
@@ -176,7 +176,7 @@ export default function Home() {
             </div>
 
             {/* Image Content */}
-            <div className={`scroll-animate right-initial ${visibleSections.has('hero') ? 'visible-right' : ''} w-full order-2 lg:order-2 hidden md:flex justify-center`}>
+            <div className={`scroll-animate right-initial ${visibleSections.has('hero') ? 'visible-right' : ''} w-full order-2 lg:order-2 flex justify-center`}>
               <div className="relative max-w-sm sm:max-w-md lg:max-w-none w-full">
                 <div className="bg-white rounded-2xl lg:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 animate-float">
                   <Image 
@@ -247,7 +247,7 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-animate ${visibleSections.has('about') ? 'visible' : ''}`}>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Why Choose AquaFlow</h2>
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Why Choose Plumbing</h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
               We&apos;re committed to providing exceptional service and lasting solutions
             </p>
@@ -435,7 +435,7 @@ export default function Home() {
             </div>
 
             {/* Image Content */}
-            <div className={`scroll-animate right-initial ${visibleSections.has('areas') ? 'visible-right' : ''} order-2 lg:order-2 w-full hidden md:block`}>
+            <div className={`scroll-animate right-initial ${visibleSections.has('areas') ? 'visible-right' : ''} order-2 lg:order-2 w-full`}>
               <div className="relative max-w-sm sm:max-w-md mx-auto lg:max-w-none">
                 <div className="bg-linear-to-br from-blue-100 to-cyan-100 rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8">
                   <Image 
@@ -445,7 +445,7 @@ export default function Home() {
                     height={400}
                     className="rounded-lg lg:rounded-2xl w-full h-64 sm:h-80 lg:h-96 object-cover shadow-xl"
                   />
-                  <div className="absolute -bottom-3 sm:-bottom-4 -right-3 sm:-right-4 bg-white rounded-xl lg:rounded-2xl shadow-xl p-3 sm:p-4">
+                  <div className="absolute bottom-2 right-2 sm:-bottom-4 sm:-right-4 bg-white rounded-xl lg:rounded-2xl shadow-xl p-3 sm:p-4">
                     <div className="flex items-center space-x-2 sm:space-x-3">
                       <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
                       <div>
@@ -481,7 +481,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5" />
-                    <a href="mailto:info@aquaflow.com" className="hover:text-blue-200 transition-colors">info@aquaflow.com</a>
+                    <a href="mailto:info@plumbing.com" className="hover:text-blue-200 transition-colors">info@plumbing.com</a>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Clock className="w-5 h-5" />
@@ -502,7 +502,7 @@ export default function Home() {
                     <span>Call Now</span>
                   </a>
                   <a 
-                    href="mailto:info@aquaflow.com"
+                    href="mailto:info@plumbing.com"
                     className="border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition-all flex items-center justify-center space-x-2 font-semibold"
                   >
                     <Mail className="w-5 h-5" />
@@ -531,11 +531,11 @@ export default function Home() {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-4">
               <Droplets className="w-8 h-8 text-blue-400" />
-              <span className="text-xl font-bold">AquaFlow Plumbing</span>
+              <span className="text-xl font-bold">Plumbing</span>
             </div>
             <p className="text-slate-400 mb-4">Expert Plumbing Solutions for Your Home & Business</p>
             <div className="text-sm text-slate-500">
-              © 2024 AquaFlow Plumbing. All rights reserved. | Licensed & Insured
+              © 2024 Plumbing. All rights reserved. | Licensed & Insured
             </div>
           </div>
         </div>
