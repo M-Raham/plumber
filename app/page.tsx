@@ -1,11 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Phone, Mail, Clock, MapPin, Wrench, Droplets, Shield, Zap, ChevronRight, Star, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import { Phone, ChevronRight, Shield, Users, Award, TrendingUp, Droplets, Mail, Clock, MapPin, CheckCircle, Menu, X, Zap, Wrench, Star } from 'lucide-react';
 
 export default function Home() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(new Set());
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const observedSections = useRef<Set<string>>(new Set());
 
@@ -109,13 +110,81 @@ export default function Home() {
               <Droplets className="w-8 h-8 text-blue-600" />
               <span className="text-xl font-bold text-slate-900">Plumbing</span>
             </div>
+            
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-slate-700 hover:text-blue-600 transition-colors">Services</a>
-              <a href="#about" className="text-slate-700 hover:text-blue-600 transition-colors">About</a>
-              <a href="#testimonials" className="text-slate-700 hover:text-blue-600 transition-colors">Testimonials</a>
-              <a href="#contact" className="text-slate-700 hover:text-blue-600 transition-colors">Contact</a>
-              <a href="tel:1234567890" className="bg-linear-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-full hover:scale-105 transition-transform shadow-lg">
-                Call Now
+              <a href="#services" className="text-slate-700 hover:text-blue-600 transition-colors scroll-smooth">Services</a>
+              <a href="#about" className="text-slate-700 hover:text-blue-600 transition-colors scroll-smooth">About</a>
+              <a href="#testimonials" className="text-slate-700 hover:text-blue-600 transition-colors scroll-smooth">Testimonials</a>
+              <a href="#areas" className="text-slate-700 hover:text-blue-600 transition-colors scroll-smooth">Service Areas</a>
+              <a href="#contact" className="text-slate-700 hover:text-blue-600 transition-colors scroll-smooth">Contact</a>
+              <a 
+                href="tel:1234567890"
+                className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors flex items-center space-x-2"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Call Now</span>
+              </a>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-slate-700 hover:text-blue-600 transition-colors p-2"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className={`md:hidden bg-white border-t border-slate-200 transition-all duration-300 ease-in-out overflow-hidden ${
+            mobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}>
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <a 
+                href="#services" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md transition-colors scroll-smooth"
+              >
+                Services
+              </a>
+              <a 
+                href="#about" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md transition-colors scroll-smooth"
+              >
+                About
+              </a>
+              <a 
+                href="#testimonials" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md transition-colors scroll-smooth"
+              >
+                Testimonials
+              </a>
+              <a 
+                href="#areas" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md transition-colors scroll-smooth"
+              >
+                Service Areas
+              </a>
+              <a 
+                href="#contact" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-3 py-2 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md transition-colors scroll-smooth"
+              >
+                Contact
+              </a>
+              <a 
+                href="tel:1234567890"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors items-center space-x-2"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Call Now</span>
               </a>
             </div>
           </div>
@@ -135,7 +204,7 @@ export default function Home() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-12 items-center justify-center">
             {/* Text Content */}
             <div className={`scroll-animate left-initial ${visibleSections.has('hero') ? 'visible-left' : ''} w-full text-center lg:text-left order-1 lg:order-1`}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
                 Expert <span className="gradient-text">Plumbing Solutions</span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
@@ -402,7 +471,7 @@ export default function Home() {
                       {item.icon}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-semibold text-slate-900 text-sm sm:text-base">{item.title}</h4>
+                      <h4 className="font-semibold text-slate-900 text-left text-[16px] sm:text-base">{item.title}</h4>
                       <p className="text-sm text-slate-600">{item.desc}</p>
                     </div>
                   </div>
