@@ -4,7 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Plumbing",
   description: "Professional 24/7 plumbing services for residential and commercial properties. Fast, reliable, and affordable solutions for all your plumbing needs.",
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
