@@ -204,7 +204,7 @@ export default function Home() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-12 items-center justify-center">
             {/* Text Content */}
             <div className={`scroll-animate left-initial ${visibleSections.has('hero') ? 'visible-left' : ''} w-full text-center lg:text-left order-1 lg:order-1`}>
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
                 Expert <span className="gradient-text">Plumbing Solutions</span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
