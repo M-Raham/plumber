@@ -202,9 +202,19 @@
 }
 
 .scroll-animate.left-initial {
-  transform: translateX(-40px);
+  transform: translateY(30px);
 }
 
 .scroll-animate.right-initial {
-  transform: translateX(40px);
+  transform: translateY(30px);
+}
+
+@media (min-width: 768px) {
+  .scroll-animate.left-initial {
+    transform: translateX(-40px);
+  }
+
+  .scroll-animate.right-initial {
+    transform: translateX(40px);
+  }
 }

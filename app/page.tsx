@@ -134,14 +134,14 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-12 items-center justify-center">
             {/* Text Content */}
-            <div className={`scroll-animate left-initial ${visibleSections.has('hero') ? 'visible-left' : ''} w-full lg:max-w-3xl text-center sm:text-center lg:text-left order-2 lg:order-1`}>
+            <div className={`scroll-animate left-initial ${visibleSections.has('hero') ? 'visible-left' : ''} w-full text-center lg:text-left order-1 lg:order-1`}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
                 Expert <span className="gradient-text">Plumbing Solutions</span>
               </h1>
               <p className="text-base sm:text-lg lg:text-xl text-slate-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
                 Professional 24/7 plumbing services for residential and commercial properties. Fast, reliable, and affordable solutions for all your plumbing needs.
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center sm:justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center lg:justify-start">
                 <a 
                   href="tel:1234567890"
                   className="bg-linear-to-r from-blue-600 to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:scale-105 transition-transform shadow-xl flex items-center justify-center space-x-2 text-sm sm:text-base font-semibold"
@@ -176,8 +176,8 @@ export default function Home() {
             </div>
 
             {/* Image Content */}
-            <div className={`scroll-animate right-initial ${visibleSections.has('hero') ? 'visible-right' : ''} w-full max-w-md lg:max-w-none order-1 lg:order-2 flex justify-center lg:justify-start`}>
-              <div className="relative">
+            <div className={`scroll-animate right-initial ${visibleSections.has('hero') ? 'visible-right' : ''} w-full order-2 lg:order-2 hidden md:flex justify-center`}>
+              <div className="relative max-w-sm sm:max-w-md lg:max-w-none w-full">
                 <div className="bg-white rounded-2xl lg:rounded-3xl shadow-2xl p-4 sm:p-6 lg:p-8 animate-float">
                   <Image 
                     src="/plumber.jpg"
@@ -380,7 +380,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Text Content */}
-            <div className={`scroll-animate left-initial ${visibleSections.has('areas') ? 'visible-left' : ''} order-2 lg:order-1 text-center lg:text-left w-full`}>
+            <div className={`scroll-animate left-initial ${visibleSections.has('areas') ? 'visible-left' : ''} order-1 lg:order-1 text-center lg:text-left w-full`}>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6 leading-tight">
                 Serving Your <span className="gradient-text">Community</span>
               </h2>
@@ -388,7 +388,7 @@ export default function Home() {
                 We proudly provide professional plumbing services throughout the greater metropolitan area, ensuring quality and reliability for every customer.
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
                 {[
                   { icon: <Users className="w-5 h-5" />, title: "Residential", desc: "Home plumbing solutions" },
                   { icon: <Award className="w-5 h-5" />, title: "Commercial", desc: "Business plumbing services" },
@@ -409,7 +409,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className={`bg-linear-to-r from-blue-50 to-cyan-50 rounded-xl lg:rounded-2xl p-4 sm:p-6 scroll-animate ${
+              <div className={`bg-linear-to-r from-blue-50 to-cyan-50 rounded-xl lg:rounded-2xl p-4 sm:p-6 scroll-animate max-w-2xl mx-auto lg:mx-0 ${
                 visibleSections.has('areas') ? 'visible' : ''
               }`} style={{ transitionDelay: visibleSections.has('areas') ? '400ms' : '0ms' }}>
                 <h4 className="font-bold text-slate-900 mb-3 sm:mb-4 text-base sm:text-lg">Service Coverage</h4>
@@ -435,8 +435,8 @@ export default function Home() {
             </div>
 
             {/* Image Content */}
-            <div className={`scroll-animate right-initial ${visibleSections.has('areas') ? 'visible-right' : ''} order-1 lg:order-2 w-full`}>
-              <div className="relative max-w-md mx-auto lg:max-w-none">
+            <div className={`scroll-animate right-initial ${visibleSections.has('areas') ? 'visible-right' : ''} order-2 lg:order-2 w-full hidden md:block`}>
+              <div className="relative max-w-sm sm:max-w-md mx-auto lg:max-w-none">
                 <div className="bg-linear-to-br from-blue-100 to-cyan-100 rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8">
                   <Image 
                     src="/serving.jpg"
